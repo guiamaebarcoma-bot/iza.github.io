@@ -1,61 +1,90 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html>
 <head>
-  <title>Cool Text & Username Generator</title>
+  <title>🔥 Cool Text & Username Generator</title>
+
+  <!-- Free icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
-    body { font-family: Arial; text-align: center; padding: 20px; }
-    textarea { width: 90%; height: 80px; }
-    button { margin: 5px; padding: 10px; }
-    .box { margin-top: 20px; font-size: 18px; }
+    body {
+      font-family: Arial;
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      color: #fff;
+    }
+
+    textarea {
+      width: 90%;
+      height: 80px;
+      border-radius: 10px;
+      padding: 10px;
+    }
+
+    button {
+      margin: 5px;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 10px;
+      background: #00ffcc;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #00ccaa;
+    }
+
+    .box {
+      margin-top: 20px;
+      font-size: 18px;
+      padding: 10px;
+      background: #222;
+      border-radius: 10px;
+    }
   </style>
 </head>
+
 <body>
 
-<h1>🔥 Cool Text & Username Generator</h1>
+<h1>🔥 Cool Tool Box</h1>
 
-<textarea id="input" placeholder="Type your text here..."></textarea><br>
+<!-- TEXT TOOL -->
+<textarea id="input" placeholder="Type text..."></textarea><br>
 
-<button onclick="fancy1()">𝓕𝓪𝓷𝓬𝔂</button>
-<button onclick="fancy2()">Ⓑⓤⓑⓑⓛⓔ</button>
-<button onclick="fancy3()">🅱🅾🆇</button>
+<button onclick="fancy()">✨ Fancy</button>
+<button onclick="reverse()">🔁 Reverse</button>
+<button onclick="copy()">📋 Copy</button>
 
 <div class="box" id="output"></div>
 
-<button onclick="copy()">📋 Copy</button>
+<hr>
+
+<!-- USERNAME -->
+<h2><i class="fa-solid fa-user"></i> Username Generator</h2>
+<button onclick="username()">🎮 Gamer</button>
+<button onclick="rp()">🎭 RP Name</button>
+
+<div class="box" id="nameBox"></div>
 
 <hr>
 
-<h2>🎲 Random Username Generator</h2>
+<!-- EMAIL GENERATOR -->
+<h2><i class="fa-solid fa-envelope"></i> Random Email Generator</h2>
+<button onclick="email()">📧 Generate Email</button>
 
-<button onclick="generate()">Generate Username</button>
-
-<div class="box" id="username"></div>
+<div class="box" id="emailBox"></div>
 
 <script>
-function fancy1() {
-  let t = input.value;
-  output.innerText = t.replace(/[a-z]/gi, c =>
+function fancy() {
+  output.innerText = input.value.split("").map(c =>
     String.fromCharCode(c.charCodeAt(0) + 120101)
-  );
+  ).join("");
 }
 
-function fancy2() {
-  let t = input.value;
-  output.innerText = t.replace(/[a-z]/gi, c =>
-    String.fromCharCode(c.toLowerCase().charCodeAt(0) - 97 + 9398)
-  );
-}
-
-function fancy3() {
-  let t = input.value;
-  let map = {
-    a:"🅐",b:"🅑",c:"🅒",d:"🅓",e:"🅔",f:"🅕",
-    g:"🅖",h:"🅗",i:"🅘",j:"🅙",k:"🅚",l:"🅛",
-    m:"🅜",n:"🅝",o:"🅞",p:"🅟",q:"🅠",r:"🅡",
-    s:"🅢",t:"🅣",u:"🅤",v:"🅥",w:"🅦",x:"🅧",
-    y:"🅨",z:"🅩"
-  };
-  output.innerText = t.toLowerCase().split("").map(c => map[c] || c).join("");
+function reverse() {
+  output.innerText = input.value.split("").reverse().join("");
 }
 
 function copy() {
@@ -63,16 +92,36 @@ function copy() {
   alert("Copied!");
 }
 
-function generate() {
-  let adj = ["Cool","Dark","Silent","Crazy","Fast","Epic"];
-  let noun = ["Ninja","Ghost","Tiger","Wolf","Hacker","King"];
-  let num = Math.floor(Math.random()*1000);
+// Username
+function username() {
+  let adj = ["Dark","Savage","Epic","Silent"];
+  let noun = ["Ninja","Wolf","Ghost","King"];
+  nameBox.innerText =
+    adj[Math.floor(Math.random()*adj.length)] +
+    noun[Math.floor(Math.random()*noun.length)] +
+    Math.floor(Math.random()*1000);
+}
 
-  let name = adj[Math.floor(Math.random()*adj.length)] +
-             noun[Math.floor(Math.random()*noun.length)] +
-             num;
+// RP names
+function rp() {
+  let first = ["Luna","Aiden","Kai","Rin","Zara"];
+  let last = ["Night","Storm","Blaze","Shadow","Vale"];
+  nameBox.innerText =
+    first[Math.floor(Math.random()*first.length)] +
+    " " +
+    last[Math.floor(Math.random()*last.length)];
+}
 
-  document.getElementById("username").innerText = name;
+// Email generator (SAFE)
+function email() {
+  let names = ["user","cool","dark","alpha","neo"];
+  let domains = ["gmail.com","yahoo.com","mail.com"];
+
+  emailBox.innerText =
+    names[Math.floor(Math.random()*names.length)] +
+    Math.floor(Math.random()*1000) +
+    "@" +
+    domains[Math.floor(Math.random()*domains.length)];
 }
 </script>
 
