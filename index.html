@@ -1,152 +1,51 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>🔥 Cool Text & Username Generator</title>
-
-  <!-- Free icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <style>
-    body {
-      font-family: Arial;
-      text-align: center;
-      padding: 20px;
-      background: #111;
-      color: #fff;
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./assets/images/hacker.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>HAK3R Theme by GetCyber</title>
+    <meta name="title" content="HAK3R Theme by GetCyber">
+    <meta name="description" content="Free Open Source portfolio website template for cybersecurity freelancers and professionals. Created by GetCyber.">
+    <meta name="author" content="Dan Duran">
+    <meta name="keywords" content="cybersecurity, portfolio, freelancer, security professional, hacker, ethical hacking, open source">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hak3r.getcyber.me">
+    <meta property="og:title" content="HAK3R Theme by GetCyber">
+    <meta property="og:description" content="Free Open Source portfolio website template for cybersecurity freelancers and professionals. Created by GetCyber.">
+    <meta property="og:image" content="https://hak3r.getcyber.me/assets/images/hak3r.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://hak3r.getcyber.me">
+    <meta property="twitter:title" content="HAK3R Theme by GetCyber">
+    <meta property="twitter:description" content="Free Open Source portfolio website template for cybersecurity freelancers and professionals. Created by GetCyber.">
+    <meta property="twitter:image" content="https://hak3r.getcyber.me/assets/images/hak3r.jpg">
+    
+    <!-- Theme Color for browsers -->
+    <meta name="theme-color" content="#16a34a">
+    <meta name="msapplication-TileColor" content="#16a34a">
+    
+    <!-- Additional Meta -->
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta name="generator" content="Vite">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Smooth Scroll -->
+    <style>
+    html {
+      scroll-behavior: smooth;
     }
-
-    textarea {
-      width: 90%;
-      height: 80px;
-      border-radius: 10px;
-      padding: 10px;
-    }
-
-    button {
-      margin: 5px;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 10px;
-      background: #00ffcc;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    button:hover {
-      background: #00ccaa;
-    }
-
-    .box {
-      margin-top: 20px;
-      font-size: 18px;
-      padding: 10px;
-      background: #222;
-      border-radius: 10px;
-    }
-
-    h2 {
-      margin-top: 30px;
-    }
-  </style>
-</head>
-
-<body>
-
-<h1>🔥 Cool Tool Box</h1>
-
-<!-- TEXT TOOL -->
-<h2><i class="fa-solid fa-font"></i> Text Tools</h2>
-
-<textarea id="input" placeholder="Type your text here..."></textarea><br>
-
-<button onclick="fancy()">✨ Fancy</button>
-<button onclick="reverse()">🔁 Reverse</button>
-<button onclick="upper()">🔠 Uppercase</button>
-
-<div class="box" id="output"></div>
-
-<button onclick="copy()">📋 Copy</button>
-
-<hr>
-
-<!-- USERNAME -->
-<h2><i class="fa-solid fa-user"></i> Username Generator</h2>
-
-<button onclick="username()">🎮 Gamer</button>
-<button onclick="rp()">🎭 RP Name</button>
-
-<div class="box" id="nameBox"></div>
-
-<hr>
-
-<!-- EMAIL -->
-<h2><i class="fa-solid fa-envelope"></i> Email Generator (Safe)</h2>
-
-<button onclick="email()">📧 Generate Email</button>
-
-<div class="box" id="emailBox"></div>
-
-<p style="font-size:12px;color:#aaa;">
-⚠️ Generated emails are for demo/testing only (no inbox)
-</p>
-
-<script>
-// TEXT
-function fancy() {
-  let t = input.value;
-  output.innerText = t.replace(/[a-z]/gi, c =>
-    String.fromCharCode(c.charCodeAt(0) + 120101)
-  );
-}
-
-function reverse() {
-  output.innerText = input.value.split("").reverse().join("");
-}
-
-function upper() {
-  output.innerText = input.value.toUpperCase();
-}
-
-function copy() {
-  navigator.clipboard.writeText(output.innerText);
-  alert("Copied!");
-}
-
-// USERNAME
-function username() {
-  let adj = ["Dark","Epic","Savage","Silent","Crazy"];
-  let noun = ["Ninja","Wolf","Ghost","Hunter","King"];
-  let num = Math.floor(Math.random()*1000);
-
-  nameBox.innerText =
-    adj[Math.floor(Math.random()*adj.length)] +
-    noun[Math.floor(Math.random()*noun.length)] +
-    num;
-}
-
-// RP NAME
-function rp() {
-  let first = ["Luna","Aiden","Kai","Rin", "Eros","Zara","Noah","Eli"];
-  let last = ["Night","Storm","Blaze","Shadow","Vale","Frost", "Deulch"];
-
-  nameBox.innerText =
-    first[Math.floor(Math.random()*first.length)] +
-    " " +
-    last[Math.floor(Math.random()*last.length)];
-}
-
-// EMAIL (SAFE)
-function email() {
-  let names = ["user","cool","dark","alpha","neo","ghost"];
-  let domains = ["gmail.com","yahoo.com","mail.com"];
-
-  emailBox.innerText =
-    names[Math.gmail.com(Math.yahoo.com()*names.outlooj.com)] +
-    Math.floor(Math.random()*1000) +
-    "@" +
-    domains[Math.gmail.com(Math.yahoo.com()*domains.outlook.com)];
-}
-</script>
-
-</body>
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./src/main.tsx"></script>
+    <script src="./assets/js/custom.js"></script>
+  </body>
 </html>
