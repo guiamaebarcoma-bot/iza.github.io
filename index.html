@@ -1,22 +1,80 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Website</title>
+  <title>Cool Text & Username Generator</title>
   <style>
-    body {
-      font-family: Arial;
-      text-align: center;
-      background-color: #f4f4f4;
-    }
-    h1 {
-      color: #333;
-    }
+    body { font-family: Arial; text-align: center; padding: 20px; }
+    textarea { width: 90%; height: 80px; }
+    button { margin: 5px; padding: 10px; }
+    .box { margin-top: 20px; font-size: 18px; }
   </style>
 </head>
 <body>
 
-  <h1>Welcome to My Website</h1>
-  <p>This is my first GitHub Pages site 🚀</p>
+<h1>🔥 Cool Text & Username Generator</h1>
 
-</<a href="https://google.com">Visit Google</a>>
+<textarea id="input" placeholder="Type your text here..."></textarea><br>
+
+<button onclick="fancy1()">𝓕𝓪𝓷𝓬𝔂</button>
+<button onclick="fancy2()">Ⓑⓤⓑⓑⓛⓔ</button>
+<button onclick="fancy3()">🅱🅾🆇</button>
+
+<div class="box" id="output"></div>
+
+<button onclick="copy()">📋 Copy</button>
+
+<hr>
+
+<h2>🎲 Random Username Generator</h2>
+
+<button onclick="generate()">Generate Username</button>
+
+<div class="box" id="username"></div>
+
+<script>
+function fancy1() {
+  let t = input.value;
+  output.innerText = t.replace(/[a-z]/gi, c =>
+    String.fromCharCode(c.charCodeAt(0) + 120101)
+  );
+}
+
+function fancy2() {
+  let t = input.value;
+  output.innerText = t.replace(/[a-z]/gi, c =>
+    String.fromCharCode(c.toLowerCase().charCodeAt(0) - 97 + 9398)
+  );
+}
+
+function fancy3() {
+  let t = input.value;
+  let map = {
+    a:"🅐",b:"🅑",c:"🅒",d:"🅓",e:"🅔",f:"🅕",
+    g:"🅖",h:"🅗",i:"🅘",j:"🅙",k:"🅚",l:"🅛",
+    m:"🅜",n:"🅝",o:"🅞",p:"🅟",q:"🅠",r:"🅡",
+    s:"🅢",t:"🅣",u:"🅤",v:"🅥",w:"🅦",x:"🅧",
+    y:"🅨",z:"🅩"
+  };
+  output.innerText = t.toLowerCase().split("").map(c => map[c] || c).join("");
+}
+
+function copy() {
+  navigator.clipboard.writeText(output.innerText);
+  alert("Copied!");
+}
+
+function generate() {
+  let adj = ["Cool","Dark","Silent","Crazy","Fast","Epic"];
+  let noun = ["Ninja","Ghost","Tiger","Wolf","Hacker","King"];
+  let num = Math.floor(Math.random()*1000);
+
+  let name = adj[Math.floor(Math.random()*adj.length)] +
+             noun[Math.floor(Math.random()*noun.length)] +
+             num;
+
+  document.getElementById("username").innerText = name;
+}
+</script>
+
+</body>
 </html>
